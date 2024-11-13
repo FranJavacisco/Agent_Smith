@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #020204;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #22b455;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.login-container {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.login-container.visible {
+    opacity: 1;
+}
+
+.login-box {
+    background: rgba(2, 2, 4, 0.9);
+    padding: 2rem;
+    border: 1px solid #204829;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(34, 180, 85, 0.2);
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.login-title {
+    color: #92e5a1;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.password-input {
+    background: transparent;
+    border: 1px solid #204829;
+    color: #92e5a1;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.password-input:focus {
+    border-color: #22b455;
+    box-shadow: 0 0 10px rgba(34, 180, 85, 0.3);
+}
+
+.password-input::placeholder {
+    color: #204829;
+}
+
+.hint {
+    color: #80ce87;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.message {
+    color: #92e5a1;
+    margin-top: 1rem;
+    min-height: 1.2rem;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(34, 180, 85, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(34, 180, 85, 0.4); }
+    100% { box-shadow: 0 0 5px rgba(34, 180, 85, 0.2); }
+}
+
+.login-box.active {
+    animation: glow 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
