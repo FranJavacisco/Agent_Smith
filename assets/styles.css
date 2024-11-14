@@ -41,6 +41,11 @@ canvas {
     box-shadow: 0 0 20px rgba(34, 180, 85, 0.2);
     text-align: center;
     backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
 }
 
 .login-title {
@@ -62,12 +67,13 @@ canvas {
     font-size: 1rem;
     text-align: center;
     outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .password-input:focus {
     border-color: #22b455;
     box-shadow: 0 0 10px rgba(34, 180, 85, 0.3);
+    transform: scale(1.02);
 }
 
 .password-input::placeholder {
@@ -86,6 +92,62 @@ canvas {
     min-height: 1.2rem;
 }
 
+.enter-button {
+    background: transparent;
+    border: 2px solid #22b455;
+    color: #22b455;
+    padding: 0.8rem 2rem;
+    margin-top: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.enter-button:hover {
+    background: rgba(34, 180, 85, 0.1);
+    box-shadow: 0 0 15px rgba(34, 180, 85, 0.3);
+}
+
+.enter-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(34, 180, 85, 0.1);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.enter-button:active::before {
+    width: 200px;
+    height: 200px;
+}
+
+.enter-button.success {
+    border-color: #ff0000;
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.enter-button.error {
+    border-color: #ff0000;
+    color: #ff0000;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
 @keyframes glow {
     0% { box-shadow: 0 0 5px rgba(34, 180, 85, 0.2); }
     50% { box-shadow: 0 0 20px rgba(34, 180, 85, 0.4); }
@@ -94,6 +156,12 @@ canvas {
 
 .login-box.active {
     animation: glow 2s infinite;
+}
+
+@keyframes revealGlow {
+    0% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
+    100% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
 }
 
 @media (max-width: 768px) {
