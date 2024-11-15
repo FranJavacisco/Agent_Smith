@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+    --neon-green: #00ff41;
+    --dark-green: #003b00;
+    --glass-bg: rgba(0, 15, 0, 0.9);
+}
+
+/* Estilos previos... */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--neon-green);
+}
+
+body {
+    background-color: #000;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Matrix Rain Animation */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.rain {
+    position: absolute;
+    width: 20px;
+    font-size: 16px;
+    animation: rain linear infinite;
+}
+
+@keyframes rain {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Navigation */
+nav {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid var(--neon-green);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a:hover {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* Nuevos estilos para la sección Sobre Mí */
+.about-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--neon-green);
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border: 2px solid var(--neon-green);
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(3px) brightness(0.7);
+    transition: all 0.3s ease;
+}
+
+.about-image:hover {
+    filter: blur(1px) brightness(0.9);
+}
+
+.about-content {
+    padding: 1rem;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid var(--neon-green);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.skill-tag:hover {
+    background: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 15px var(--neon-green);
+    transform: translateY(-2px);
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: inset(50% 0 30% 0);
+        transform: translate(-5px, 5px);
+    }
+    20% {
+        clip-path: inset(15% 0 65% 0);
+        transform: translate(5px, -5px);
+    }
+    40% {
+        clip-path: inset(80% 0 5% 0);
+        transform: translate(-5px, 5px);
+    }
+    60% {
+        clip-path: inset(40% 0 43% 0);
+        transform: translate(5px, -5px);
+    }
+    80% {
+        clip-path: inset(25% 0 58% 0);
+        transform: translate(-5px, 5px);
+    }
+    100% {
+        clip-path: inset(50% 0 30% 0);
+        transform: translate(5px, -5px);
+    }
+}
+
+.glitch-effect {
+    position: relative;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.glitch-effect::before {
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #0ff;
+    z-index: -1;
+}
+
+.glitch-effect::after {
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #f0f;
+    z-index: -2;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image-container {
+        height: 200px;
+    }
+}
+
+
