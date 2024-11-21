@@ -41,7 +41,8 @@ Este proyecto es ideal para demostraciones de habilidades en desarrollo web, sim
 
 ### Capturas de Pantalla
 
-*Próximamente*
+![Captura de pantalla 2024-11-21 000644](https://github.com/user-attachments/assets/7b79e2ff-f38e-4a7b-be3b-bcf4c20820d7)
+
 
 ### Contribuciones
 
