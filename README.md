@@ -3,7 +3,7 @@
 
 ### Descripción del Proyecto
 
-**Matrix Login Simulation** es un proyecto interactivo inspirado en el universo de "The Matrix", diseñado para simular una experiencia visual inmersiva de lluvia de código combinada con un sistema de autenticación ficticio. Este proyecto utiliza HTML5, CSS3 y JavaScript para crear un entorno dinámico y visualmente atractivo.
+**Agent_Smith** es un Matrix Login Simulation un proyecto interactivo inspirado en el universo de "The Matrix", diseñado para simular una experiencia visual inmersiva de lluvia de código combinada con un sistema de autenticación ficticio. Este proyecto utiliza HTML5, CSS3 y JavaScript para crear un entorno dinámico y visualmente atractivo.
 
 ### Características
 
@@ -27,7 +27,7 @@ Este proyecto es ideal para demostraciones de habilidades en desarrollo web, sim
 
 1. Clona este repositorio en tu máquina local.  
    ```bash
-   git clone https://github.com/tuusuario/matrix-login-simulation.git
+   git clone https://github.com/tuusuario/Agent_Smith.git
    ```
 2. Abre el archivo `index.html` en tu navegador favorito.  
 3. Observa la lluvia de código y encuentra las letras de la palabra clave "MATRIX".  
